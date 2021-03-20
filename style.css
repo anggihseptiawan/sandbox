@@ -1,0 +1,95 @@
+@import './main.css';
+
+* {
+    box-sizing: border-box;
+}
+
+.bagi {
+    width: 100%;
+    height: 100% !important;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bagi::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.kiri {
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 5%;
+    /* flex: 2; */
+    width: 70%;
+}
+
+.kiri-peserta {
+    float: left;
+    width: 50%;
+    margin-bottom: 2%;
+}
+
+.kanan-peserta {
+    float: right;
+    justify-content: right;
+    align-content: right;
+    text-align: right;
+    width: 50%;
+    margin-bottom: 2%;
+}
+
+.kanan {
+    background: #fff;
+    padding: 25px 5%;
+    margin-top: 5%;
+    width: 30%;
+    max-height: 80vh;
+    overflow-y: scroll;
+}
+
+.kanan::-webkit-scrollbar {
+    width: 8px;
+    background-color:transparent;
+    border-radius: 5px;
+    padding: 0 2px;
+}
+
+.kanan::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgb(203, 206, 221);
+}
+
+.kanan .kanan-title {
+    margin-top: 5%;
+    font-weight: 500;
+}
+
+.mar-btm {
+    margin-bottom: 6%;
+}
+
+
+@media (max-width: 950px) {
+    .bagi {
+        flex-direction: column;
+    }
+    .kiri, .kanan {
+        width: 100%;
+    }
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    /* width: 200px; */
+    flex: 1 0 20%;
+    height: 100px;
+    background-color: teal;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}

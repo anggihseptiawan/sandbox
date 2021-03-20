@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
+    <title>Sandbox</title>
+
+    <style>
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, .select-input {
+            width: 100%;
+            padding: 6px 15px;
+            border-radius: 3px;
+            border: 1px solid rgb(174, 179, 206);
+        }
+
+        .form-group {
+            width: 25%;
+            margin-bottom: 10px;
+        }
+
+        .options {
+            opacity: 0;
+            width: 0;
+            height: 0;
+            transition: height .5s ease;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, .2);
+            margin: 4px 0;
+            border-radius: 4px;
+        }
+
+        .active {
+            opacity: 1;
+            width: 100%;
+            height: 180px;
+        }
+
+        .option {
+            white-space: nowrap;
+            padding: 7px 15px;
+            cursor: pointer;
+            transition: background .2s ease;
+        }
+
+        .option:hover {
+            background: rgb(174, 179, 206);
+        }
+
+        button {
+            position: relative;
+            z-index: 2;
+        }
+
+    </style>
+
+</head>
+<body onbeforeunload="alert('hallo gaiss..')">
+
+    <!-- <h4><i>Take a look at console..</i></h4>
+    <a href="contact.html">contact</a>
+    <a href="#cool-feature">go to</a>
+
+    <div style="margin-top: 20px;">Cool feature</div>
+    <div id="time"></div> -->
+
+
+    <form action="" method="GET">
+        <div class="form-group">
+            <label for="nama">Nama</label>
+            <input type="text" id="nama" name="nama">
+        </div>
+        <div class="form-group">
+            <label for="alamat">Alamat</label>
+            <input type="text" id="alamat" name="alamat">
+        </div>
+        <div class="form-group">
+            <label class="label-option">Daftar Pilihan</label>
+            <div class="select-input">Pilihan 1</div>
+            <input type="hidden" id="hidden" name="pilihan">
+            <div class="select">
+                <div class="options">
+                    <div class="option">Pilihan 1</div>
+                    <div class="option">Pilihan 2</div>
+                    <div class="option">Pilihan 3</div>
+                    <div class="option">Pilihan 4</div>
+                    <div class="option">Pilihan 5</div>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit">kirim</button>
+    </form>
+
+
+    <a href="room.html">room</a>
+    <a href="contact.html">contact</a>
+
+    <!-- <button id="btn">Some button <span id="time"></span></button>
+    <button id="btn">Another button</button> -->
+
+
+
+    <script>
+
+        window.onbeforeunload(() => {
+            alert('Heyy, jangan di load..')
+        })
+
+        const select = document.querySelector('.select-input');
+        const container = document.querySelector('.options');
+        const options = document.querySelectorAll('.option');
+        const input = document.getElementById('hidden');
+
+        select.addEventListener('click', function() {
+            container.classList.toggle('active')
+        })
+
+        options.forEach(option => {
+            option.addEventListener('click', function() {
+                const text = option.textContent;
+                select.textContent = text;
+                input.value = text;
+                container.classList.toggle('active')
+            })
+        })
+
+
+        // const el = document.getElementById('time');
+        // const some = document.getElementById('ndsndjsnj');
+        // const btn = document.getElementById('dnjsndjs');
+
+        // some?.addEventListener('click', () => {
+        //     console.log('hallo');
+        // })
+
+        // if (el) {
+        //     console.log(some);
+        // }
+
+        // btn?.classList.add('dsmkdsm');
+        // console.log(some);
+        // console.log('hallo');
+        // setInterval(() => {
+        //     const now = Date.now();
+        //     // // const later = Date.now() + 1 * 2 * 60 * 60 * 1000;
+        //     // // const diff = later - now;
+
+        //     // // const hours = Math.floor(diff % (1000 * 60 * 60 * 24) / (1000 * 60 * 60))
+        //     // // const minutes = Math.floor(diff % (1000 * 60 * 60) / (1000 * 60))
+        //     const later = new Date("2021/01/14 15:50").getTime();
+        //     const diff = later - now;
+        //     const hour = diff % (60 / 60 / 1000);
+        //     const min = Math.floor(diff / 60 / 1000);
+        //     const sec = Math.floor((diff / 1000) % 60);
+        
+        //     el.innerHTML = `${String(min).padStart(2, '0')} : ${String(sec).padStart(2, '0')}`;
+        //     console.log('ksmkdmsk')
+        // }, 1000)
+
+        // console.log(Math.floor(min));
+        // console.log(Math.floor(sec));
+
+        // console.log(hours * 60);
+        // console.log(now)
+
+        // const diff = 1610610646000 - 1610609448717;
+
+        // console.log(new Date(1610610646000))
+        // console.log(new Date(1610609448717))
+        // console.log(new Date(1610585446000))
+
+        // alert(`Hallo, hours: ${hours}, minutes: ${minutes}, now: ${now}, diff: ${diff}, later: ${later}`);
+        
+        // setInterval(() => {
+        //     console.log(minutes);
+        // }, 1000)
+
+        // Force back button to reload the page
+        // window.addEventListener( "pageshow", function ( event ) {
+        //     var historyTraversal = event.persisted || ( typeof window.performance != "undefined" && window.performance.navigation.type === 2 );
+        //     if ( historyTraversal ) {
+        //         // Handle page restore.
+        //         window.location.reload();
+        //     }
+        // });
+
+        // document.getElementById('btn').addEventListener('click', () => {
+        //     console.log("Hallo")
+        // })
+
+
+        // // Force back button to reload the page
+        // if(performance.navigation.type == 2){
+        //     console.log('back button was pressed');
+        //     // location.reload(true);
+        // }
+
+        // window.addEventListener('mousewheel', function() {
+        //     console.log('oyyyy')
+        // })
+
+    </script>
+</body>
+</html>
