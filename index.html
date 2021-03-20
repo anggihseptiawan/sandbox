@@ -71,15 +71,7 @@
     </style>
 
 </head>
-<body onbeforeunload="alert('hallo gaiss..')">
-
-    <!-- <h4><i>Take a look at console..</i></h4>
-    <a href="contact.html">contact</a>
-    <a href="#cool-feature">go to</a>
-
-    <div style="margin-top: 20px;">Cool feature</div>
-    <div id="time"></div> -->
-
+<body>
 
     <form action="" method="GET">
         <div class="form-group">
@@ -109,19 +101,12 @@
     </form>
 
 
+    <a href="index.html">home</a>
     <a href="room.html">room</a>
     <a href="contact.html">contact</a>
 
-    <!-- <button id="btn">Some button <span id="time"></span></button>
-    <button id="btn">Another button</button> -->
-
-
 
     <script>
-
-        window.onbeforeunload(() => {
-            alert('Heyy, jangan di load..')
-        })
 
         const select = document.querySelector('.select-input');
         const container = document.querySelector('.options');
@@ -140,82 +125,7 @@
                 container.classList.toggle('active')
             })
         })
-
-
-        // const el = document.getElementById('time');
-        // const some = document.getElementById('ndsndjsnj');
-        // const btn = document.getElementById('dnjsndjs');
-
-        // some?.addEventListener('click', () => {
-        //     console.log('hallo');
-        // })
-
-        // if (el) {
-        //     console.log(some);
-        // }
-
-        // btn?.classList.add('dsmkdsm');
-        // console.log(some);
-        // console.log('hallo');
-        // setInterval(() => {
-        //     const now = Date.now();
-        //     // // const later = Date.now() + 1 * 2 * 60 * 60 * 1000;
-        //     // // const diff = later - now;
-
-        //     // // const hours = Math.floor(diff % (1000 * 60 * 60 * 24) / (1000 * 60 * 60))
-        //     // // const minutes = Math.floor(diff % (1000 * 60 * 60) / (1000 * 60))
-        //     const later = new Date("2021/01/14 15:50").getTime();
-        //     const diff = later - now;
-        //     const hour = diff % (60 / 60 / 1000);
-        //     const min = Math.floor(diff / 60 / 1000);
-        //     const sec = Math.floor((diff / 1000) % 60);
         
-        //     el.innerHTML = `${String(min).padStart(2, '0')} : ${String(sec).padStart(2, '0')}`;
-        //     console.log('ksmkdmsk')
-        // }, 1000)
-
-        // console.log(Math.floor(min));
-        // console.log(Math.floor(sec));
-
-        // console.log(hours * 60);
-        // console.log(now)
-
-        // const diff = 1610610646000 - 1610609448717;
-
-        // console.log(new Date(1610610646000))
-        // console.log(new Date(1610609448717))
-        // console.log(new Date(1610585446000))
-
-        // alert(`Hallo, hours: ${hours}, minutes: ${minutes}, now: ${now}, diff: ${diff}, later: ${later}`);
-        
-        // setInterval(() => {
-        //     console.log(minutes);
-        // }, 1000)
-
-        // Force back button to reload the page
-        // window.addEventListener( "pageshow", function ( event ) {
-        //     var historyTraversal = event.persisted || ( typeof window.performance != "undefined" && window.performance.navigation.type === 2 );
-        //     if ( historyTraversal ) {
-        //         // Handle page restore.
-        //         window.location.reload();
-        //     }
-        // });
-
-        // document.getElementById('btn').addEventListener('click', () => {
-        //     console.log("Hallo")
-        // })
-
-
-        // // Force back button to reload the page
-        // if(performance.navigation.type == 2){
-        //     console.log('back button was pressed');
-        //     // location.reload(true);
-        // }
-
-        // window.addEventListener('mousewheel', function() {
-        //     console.log('oyyyy')
-        // })
-
     </script>
 </body>
 </html>
